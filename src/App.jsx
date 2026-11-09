@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { links, projects, services } from './siteData.js';
 
 function Arrow({ diagonal = false }) {
