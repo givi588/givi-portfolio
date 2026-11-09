@@ -2,16 +2,16 @@
 
 A responsive portfolio showcasing real web projects, React dashboards, and practical Python automation. Built with **React, Vite, and CSS**.
 
-**Live website (after deployment):** https://givi588.github.io/givi-portfolio/
+**Live website:** https://givi588.github.io/givi-portfolio/
 
 ## Featured work
 
-- [Mira Flowers — Storefront](https://givi588.github.io/mira-flowers/)
+- [Mira Flowers — Storefront](https://givi588.github.io/mira-flowers/) · [Case study](https://givi588.github.io/givi-portfolio/#case-study) · [Technical breakdown](https://github.com/givi588/mira-flowers/blob/main/docs/CASE_STUDY.md)
 - [Category Dashboard](https://givi588.github.io/category-dashboard/)
 - [Sales & Inventory Manager](https://givi588.github.io/sales-inventory-manager-clean/)
 - [React Training Dashboard](https://givi588.github.io/react-training-dashboard/)
 
-The site includes interactive project filters, responsive navigation, custom CSS illustrations, a services section, and links to GitHub and Fiverr. The illustrations are **not actual application screenshots or verified customer metrics**; use the live-demo links for the real products.
+The site includes interactive project filters, a detailed real-business Mira Flowers case study, responsive navigation, custom CSS illustrations, a services section, and links to GitHub and Fiverr. The illustrations are **not actual application screenshots or verified customer metrics**; use the live-demo links for the real products.
 
 ## Run locally
 
