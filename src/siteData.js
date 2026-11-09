@@ -1,0 +1,82 @@
+// Update projects here; cards, counts and links update automatically.
+export const projects = [
+  {
+    id: 'mira-flowers',
+    number: '01',
+    title: 'Mira Flowers',
+    category: 'Websites',
+    label: 'Real storefront',
+    summary: 'A responsive, Georgian-language storefront helping a local flower shop showcase arrangements and prepare order inquiries.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://givi588.github.io/mira-flowers/',
+    code: 'https://github.com/givi588/mira-flowers',
+    art: 'flowers',
+    featured: true,
+  },
+  {
+    id: 'category-dashboard',
+    number: '02',
+    title: 'Category Dashboard',
+    category: 'Dashboards',
+    label: 'Data management',
+    summary: 'A browser-based category manager with search, sorting, safe import/export, recovery controls and automated tests.',
+    stack: ['JavaScript', 'Testing', 'LocalStorage'],
+    demo: 'https://givi588.github.io/category-dashboard/',
+    code: 'https://github.com/givi588/category-dashboard',
+    art: 'categories',
+    featured: true,
+  },
+  {
+    id: 'sales-inventory',
+    number: '03',
+    title: 'Sales & Inventory Manager',
+    category: 'Dashboards',
+    label: 'Business tools',
+    summary: 'A lightweight dashboard for tracking inventory, recording sales, spotting low stock and exporting reports.',
+    stack: ['JavaScript', 'CSV', 'Browser storage'],
+    demo: 'https://givi588.github.io/sales-inventory-manager-clean/',
+    code: 'https://github.com/givi588/sales-inventory-manager-clean',
+    art: 'inventory',
+    featured: true,
+  },
+  {
+    id: 'react-training',
+    number: '04',
+    title: 'React Training Dashboard',
+    category: 'Dashboards',
+    label: 'React application',
+    summary: 'A task-management interface with priorities, search, status filters, dark mode and browser persistence.',
+    stack: ['React', 'Vite', 'JavaScript'],
+    demo: 'https://givi588.github.io/react-training-dashboard/',
+    code: 'https://github.com/givi588/react-training-dashboard',
+    art: 'react',
+    featured: true,
+  },
+];
+
+export const services = [
+  {
+    number: '01',
+    title: 'Websites & landing pages',
+    description: 'Responsive, readable and focused business websites that work across devices.',
+    detail: 'HTML · CSS · JavaScript',
+  },
+  {
+    number: '02',
+    title: 'React & JavaScript apps',
+    description: 'Interactive tools with thoughtful forms, search, filters and clear user feedback.',
+    detail: 'React · Vite · UI development',
+  },
+  {
+    number: '03',
+    title: 'Python & CSV automation',
+    description: 'Small tools that simplify repetitive calculations, cleanup and reporting.',
+    detail: 'Python · CSV · Reporting',
+  },
+];
+
+export const links = {
+  github: 'https://github.com/givi588',
+  fiverr: 'https://www.fiverr.com/givi588/fix-html-css-and-javascript-website-bugs',
+  inquiry: 'https://github.com/givi588/givi588/issues/new?template=project-inquiry.yml',
+};
