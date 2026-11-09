@@ -102,6 +102,31 @@ function ProjectArt({ art }) {
       <div className="inventory-window"><div className="inv-head"><div><span>OPERATIONS / OVERVIEW</span><b>Inventory health</b></div><span className="inv-live">LIVE VIEW</span></div><div className="inv-stat"><div><small>Available stock</small><strong>1,240</strong></div><div><small>Low stock alerts</small><strong>08</strong></div></div><div className="inv-table"><div><span>PRODUCT</span><span>STOCK</span><span>STATUS</span></div><div><span>Product A</span><span>128</span><i>Healthy</i></div><div><span>Product B</span><span>6</span><i className="inv-warning">Low stock</i></div></div></div>
     </div>
   );
+  if (art === 'invoice') return (
+    <div className="art art-invoice" aria-hidden="true">
+      <div className="invoice-window">
+        <div className="invoice-head">
+          <span className="invoice-brand">studio<span>.</span></span>
+          <span className="invoice-preview-label">DOCUMENT PREVIEW</span>
+        </div>
+        <div className="invoice-heading">
+          <div><small>DOCUMENT</small><strong>Invoice</strong></div>
+          <div className="invoice-id"><span>INV-001</span><small>Sample preview</small></div>
+        </div>
+        <div className="invoice-parties">
+          <div><small>FROM</small><b>Your Business</b><i>Business details</i></div>
+          <div><small>BILL TO</small><b>Client Name</b><i>Customer details</i></div>
+        </div>
+        <div className="invoice-lines">
+          <div><span>DESCRIPTION</span><span>QTY</span><span>AMOUNT</span></div>
+          <div><span>Website design</span><span>1</span><span>$450.00</span></div>
+          <div><span>UI refinements</span><span>2</span><span>$150.00</span></div>
+        </div>
+        <div className="invoice-total"><span>ESTIMATED TOTAL</span><strong>$750.00</strong></div>
+      </div>
+      <span className="invoice-badge">QUOTE / INVOICE</span>
+    </div>
+  );
   return (
     <div className="art art-react" aria-hidden="true"><div className="task-window"><div className="task-head"><div><span>YOUR SPACE</span><strong>Make today count.</strong></div><div className="task-icon">✓</div></div><div className="task-tabs"><span>All tasks</span><span>In progress</span><span>Done</span></div><div className="task-lines"><div><i className="task-check"/><b>Review dashboard layout</b><span>HIGH</span></div><div><i className="task-check active"/><b>Test responsive views</b><span>MEDIUM</span></div><div><i className="task-check"/><b>Update documentation</b><span>LOW</span></div></div><div className="task-progress"><span>Today's progress</span><div><i/></div></div></div></div>
   );

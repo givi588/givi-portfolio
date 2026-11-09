@@ -10,6 +10,7 @@ A responsive portfolio showcasing real web projects, React dashboards, and pract
 - [Category Dashboard](https://givi588.github.io/category-dashboard/)
 - [Sales & Inventory Manager](https://givi588.github.io/sales-inventory-manager-clean/)
 - [React Training Dashboard](https://givi588.github.io/react-training-dashboard/)
+- [Invoice & Quote Studio](https://givi588.github.io/invoice-quote-studio/) · [Source code](https://github.com/givi588/invoice-quote-studio)
 
 The site includes interactive project filters, a detailed real-business Mira Flowers case study, responsive navigation, custom CSS illustrations, a services section, and links to GitHub and Fiverr. The illustrations are **not actual application screenshots or verified customer metrics**; use the live-demo links for the real products.
 

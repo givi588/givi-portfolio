@@ -362,6 +362,42 @@ p{line-height:1.75}
   .case-visual-tag{left:12px;bottom:14px;max-width:calc(100% - 24px);font-size:9px}
 }
 
+
+/* Invoice & Quote Studio: stylized preview (not an app screenshot). */
+.art-invoice{background:linear-gradient(145deg,#d6e2e7,#c2d4db);align-items:flex-end}
+.invoice-window{position:relative;isolation:isolate;width:90%;height:95%;background:#fff;border:1px solid #e8e9ec;border-radius:11px 11px 0 0;box-shadow:0 12px 40px #24496025;padding:21px 24px 0;overflow:hidden}
+.invoice-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.invoice-brand{font-size:15px;font-weight:900;letter-spacing:-.07em;color:#203c50}
+.invoice-brand span{color:#45ab9a}
+.invoice-preview-label{font-size:7px;letter-spacing:.12em;font-weight:900;color:#8b9ea5}
+.invoice-heading,.invoice-parties{display:flex;justify-content:space-between;gap:12px}
+.invoice-heading small,.invoice-parties small{display:block;font-size:8px;font-weight:850;color:#8ca0ac;letter-spacing:.1em}
+.invoice-heading strong{display:block;margin-top:4px;font-size:24px;letter-spacing:-.06em;color:#1d3949}
+.invoice-id{text-align:right}
+.invoice-id span{display:block;font-weight:850;font-size:10px;color:#345a6e}
+.invoice-id small{margin-top:6px;text-transform:uppercase}
+.invoice-parties{margin:20px 0;gap:25px}
+.invoice-parties>div{width:50%}
+.invoice-parties b{display:block;font-size:10px;color:#304755;margin-top:5px}
+.invoice-parties i{display:block;color:#95a6ad;font-size:8px;font-style:normal;margin-top:4px}
+.invoice-lines{border-top:1px solid #e4ebed}
+.invoice-lines>div{display:grid;grid-template-columns:1fr 34px 65px;gap:8px;padding:7px 0;align-items:center;border-bottom:1px solid #edf0f1;font-size:9px;color:#495e68}
+.invoice-lines>div:first-child{font-size:7px;font-weight:850;letter-spacing:.04em;color:#8c9ba6}
+.invoice-lines>div span:not(:first-child){text-align:right}
+.invoice-total{display:flex;justify-content:space-between;align-items:center;padding:14px 0;color:#26475a}
+.invoice-total span{font-size:8px;letter-spacing:.08em;font-weight:900}
+.invoice-total strong{font-size:18px;letter-spacing:-.06em}
+.invoice-badge{position:absolute;right:6px;top:34px;z-index:2;display:block;padding:10px 13px;background:#c8f5e5;color:#2b665a;border-radius:7px;transform:rotate(8deg);box-shadow:0 7px 17px #416b6720;font-size:8px;font-weight:900;letter-spacing:.08em}
+@media(max-width:460px){
+  .invoice-window{width:96%;padding:13px}
+  .invoice-head{margin-bottom:14px}
+  .invoice-heading strong{font-size:19px}
+  .invoice-parties{margin:14px 0}
+  .invoice-total{padding:8px 0}
+  .invoice-total strong{font-size:15px}
+  .invoice-badge{top:32px;right:1px;font-size:7px;padding:7px}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
