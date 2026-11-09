@@ -115,7 +115,7 @@ function ProjectCard({ project, index }) {
         <div className="project-overline"><span>{project.number} / {project.label}</span><span>{project.category}</span></div>
         <h3>{project.title}</h3>
         <p>{project.summary}</p>
-        <div className="project-bottom"><div className="tags">{project.stack.map((name) => <span key={name}>{name}</span>)}</div><div className="project-links"><a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={'Live demo: ' + project.title}>Live <Arrow diagonal /></a><a href={project.code} target="_blank" rel="noopener noreferrer" aria-label={'Source code: ' + project.title}>Code <Arrow diagonal /></a></div></div>
+        <div className="project-bottom"><div className="tags">{project.stack.map((name) => <span key={name}>{name}</span>)}</div><div className="project-links">{project.id === 'mira-flowers' && <a href="#case-study" aria-label="Read the Mira Flowers case study">Case study <Arrow diagonal /></a>}<a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={'Live demo: ' + project.title}>Live <Arrow diagonal /></a><a href={project.code} target="_blank" rel="noopener noreferrer" aria-label={'Source code: ' + project.title}>Code <Arrow diagonal /></a></div></div>
       </div>
     </article>
   );
@@ -132,6 +132,77 @@ function Work() {
         <div className="project-grid">{visible.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
         <p className="work-footnote">The interface previews above are stylized illustrations. Use the live links to see the actual applications.</p>
         <a className="all-repos" href={links.github} target="_blank" rel="noopener noreferrer">More projects on GitHub <Arrow diagonal /></a>
+      </div>
+    </section>
+  );
+}
+
+
+function MiraCaseStudy() {
+  return (
+    <section className="case-study-section" id="case-study" aria-labelledby="case-study-title">
+      <div className="container">
+        <div className="case-study-header">
+          <div className="kicker"><span>FEATURED CASE STUDY</span> / REAL BUSINESS PROJECT</div>
+          <h2 id="case-study-title">A local flower shop.<br /><em>A clearer digital storefront.</em></h2>
+          <p>A practical website for Mira Flowers, a florist in Kutaisi, Georgia. Built for people who want to explore arrangements and contact the shop without a complicated checkout.</p>
+        </div>
+
+        <div className="case-story-layout">
+          <figure className="case-story-visual">
+            <div className="case-story-picture">
+              <img
+                src="https://givi588.github.io/mira-flowers/assets/hero-florist.webp"
+                alt="Illustrative pink flower bouquet artwork featured on the Mira Flowers website"
+                loading="lazy"
+                width="1122"
+                height="1402"
+              />
+              <span className="case-visual-tag">MIRA FLOWERS <span>— KUTAISI, GEORGIA</span></span>
+            </div>
+            <figcaption>Illustrative artwork from the storefront; not a verified photo of currently available stock.</figcaption>
+          </figure>
+          <div className="case-story-summary">
+            <div className="case-facts">
+              <div><small>PROJECT TYPE</small><strong>Small-business storefront</strong></div>
+              <div><small>LANGUAGE</small><strong>Georgian</strong></div>
+              <div><small>STACK</small><strong>HTML · CSS · JavaScript</strong></div>
+            </div>
+            <div className="case-copy-group">
+              <span>01 / THE CHALLENGE</span>
+              <h3>Make a new local shop easier to explore online.</h3>
+              <p>The shop needed one shareable destination for flower options, indicative prices, pickup and delivery details, location, and contact information.</p>
+            </div>
+            <div className="case-copy-group">
+              <span>02 / THE SOLUTION</span>
+              <h3>Keep the customer journey simple.</h3>
+              <p>I built a responsive product catalog with category filters, a persistent browser cart, delivery estimates, and a copyable order summary. Customers contact the shop directly to confirm details.</p>
+            </div>
+            <div className="case-story-actions">
+              <a href="https://givi588.github.io/mira-flowers/" target="_blank" rel="noopener noreferrer" className="button button-dark">Explore live website <Arrow diagonal /></a>
+              <a href="https://github.com/givi588/mira-flowers/blob/main/docs/CASE_STUDY.md" target="_blank" rel="noopener noreferrer" className="case-text-link">Read technical breakdown <Arrow diagonal /></a>
+            </div>
+          </div>
+        </div>
+
+        <div className="case-delivery-grid" aria-label="Key implementation decisions">
+          <article className="case-delivery-card">
+            <span>01 / CUSTOMER EXPERIENCE</span>
+            <h3>Browse → select → contact</h3>
+            <p>The cart helps visitors prepare a request; Facebook or phone is used to confirm an actual order. No payment or automatic order submission is implied.</p>
+          </article>
+          <article className="case-delivery-card">
+            <span>02 / TECHNICAL DETAIL</span>
+            <h3>Careful price calculations</h3>
+            <p>A separate JavaScript pricing module uses integer tetri and automated tests for quantities and delivery fees.</p>
+          </article>
+          <article className="case-delivery-card">
+            <span>03 / DISCOVERABILITY</span>
+            <h3>Search-ready foundations</h3>
+            <p>Descriptive metadata, canonical URL, Florist structured data, sitemap, and clear shop information help search engines understand the site.</p>
+          </article>
+        </div>
+        <p className="case-study-honesty"><strong>Delivered:</strong> a public shop website, catalog, order-planning flow, and contact path. <strong>Not claimed:</strong> measured conversion gains, sales growth, or guaranteed Google rankings.</p>
       </div>
     </section>
   );
@@ -158,5 +229,5 @@ function Footer() {
 }
 
 export default function App() {
-  return <><a href="#main" className="skip-link">Skip to content</a><div id="top"><Header /><main id="main"><Hero /><Marquee /><Work /><Services /><About /><Contact /></main><Footer /></div></>;
+  return <><a href="#main" className="skip-link">Skip to content</a><div id="top"><Header /><main id="main"><Hero /><Marquee /><Work /><MiraCaseStudy /><Services /><About /><Contact /></main><Footer /></div></>;
 }
