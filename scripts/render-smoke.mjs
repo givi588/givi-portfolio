@@ -18,6 +18,7 @@ try {
   assert.match(html, /Building digital/);
   assert.match(html, /Mira Flowers/);
   assert.match(html, /React Training Dashboard/);
+  assert.match(html, /Invoice &amp; Quote Studio|Invoice & Quote Studio/);
   assert.match(html, /A clearer digital storefront/);
   assert.match(html, /href="#case-study"/);
   assert.match(html, /Read technical breakdown/);
