@@ -7,8 +7,8 @@ const validUrl = (value) => {
   return url.protocol === 'https:' && Boolean(url.hostname);
 };
 
-test('portfolio has five unique featured projects', () => {
-  assert.equal(projects.length, 5);
+test('portfolio has seven unique featured projects', () => {
+  assert.equal(projects.length, 7);
   assert.equal(new Set(projects.map((project) => project.id)).size, projects.length);
   assert.ok(projects.every((project) => project.featured));
 });
@@ -26,9 +26,9 @@ test('each project has complete data and working URL formats', () => {
     for (const field of ['title', 'summary', 'label', 'art', 'category']) {
       assert.ok(project[field]?.trim(), `${project.id} missing ${field}`);
     }
-    assert.ok(['Websites', 'Dashboards'].includes(project.category));
+    assert.ok(['Websites', 'Dashboards', 'Automation'].includes(project.category));
     assert.ok(project.stack.length >= 2);
-    assert.ok(validUrl(project.demo));
+    if (project.demo !== null) assert.ok(validUrl(project.demo));
     assert.ok(validUrl(project.code));
   }
 });
@@ -41,4 +41,18 @@ test('service entries are unique and complete', () => {
 
 test('external contact and profile links are HTTPS', () => {
   assert.ok(Object.values(links).every(validUrl));
+});
+
+test('Python command-line examples are clearly marked without fake live demos', () => {
+  const automation = projects.filter((project) => project.category === 'Automation');
+  assert.equal(automation.length, 2);
+  assert.ok(automation.every((project) => project.demo === null));
+  assert.ok(automation.every((project) => project.code.startsWith('https://github.com/givi588/')));
+  assert.ok(automation.every((project) => project.stack.includes('Python')));
+});
+
+test('real screenshot is sourced from the published dashboard repository', () => {
+  const category = projects.find((project) => project.id === 'category-dashboard');
+  assert.equal(category.screenshot, 'https://raw.githubusercontent.com/givi588/category-dashboard/main/screenshots/v1-desktop.png');
+  assert.ok(projects.filter((project) => project.screenshot).length === 1);
 });
