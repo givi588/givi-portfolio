@@ -70,7 +70,7 @@ function Hero() {
       <div className="hero-copy">
         <div className="eyebrow"><span className="eyebrow-line" /> INDEPENDENT WEB DEVELOPER <span className="eyebrow-line" /></div>
         <h1 id="hero-title">Building digital<br />things that <em>make</em><br /><em>work easier.</em></h1>
-        <p>I create clean websites, practical React apps, and small automation tools for real-world problems. Thoughtful details. Straightforward solutions.</p>
+        <p>I fix website issues, build React and TypeScript features, and create Python tools for CSV reports and repetitive tasks. Simple solutions, clear handover.</p>
         <div className="hero-actions">
           <a className="button button-dark" href="#work">Explore my work <Arrow diagonal /></a>
           <a className="button button-text" href={links.inquiry} target="_blank" rel="noopener noreferrer">Discuss a project <Arrow diagonal /></a>
@@ -83,7 +83,7 @@ function Hero() {
 }
 
 function Marquee() {
-  return <div className="capabilities"><div className="container capabilities-inner"><span>WHAT I WORK WITH</span><strong>React</strong><span className="cap-divider"/><strong>JavaScript</strong><span className="cap-divider"/><strong>Python</strong><span className="cap-divider"/><strong>HTML & CSS</strong></div></div>;
+  return <div className="capabilities"><div className="container capabilities-inner"><span>WHAT I WORK WITH</span><strong>React</strong><span className="cap-divider"/><strong>TypeScript</strong><span className="cap-divider"/><strong>JavaScript</strong><span className="cap-divider"/><strong>Python</strong><span className="cap-divider"/><strong>HTML & CSS</strong></div></div>;
 }
 
 function ProjectArt({ art }) {
@@ -127,6 +127,34 @@ function ProjectArt({ art }) {
       <span className="invoice-badge">QUOTE / INVOICE</span>
     </div>
   );
+  if (art === 'python-inventory' || art === 'python-sales') {
+    const inventory = art === 'python-inventory';
+    return (
+      <div className="art art-python" aria-hidden="true">
+        <div className="python-terminal">
+          <div className="python-terminal-top"><span className="python-dots">● ● ●</span><span>python3 / reports</span></div>
+          <div className="python-command">&gt; python {inventory ? 'inventory.py' : 'automation.py'}</div>
+          <div className="python-result-title">{inventory ? 'INVENTORY REPORT' : 'SALES REPORT'}</div>
+          {inventory ? (
+            <>
+              <div className="python-line"><span>Mouse</span><span>LOW STOCK</span></div>
+              <div className="python-line"><span>Monitor</span><span>OK</span></div>
+              <div className="python-line"><span>USB Cable</span><span>LOW STOCK</span></div>
+              <div className="python-result">Total units: 28</div>
+            </>
+          ) : (
+            <>
+              <div className="python-line"><span>Keyboard</span><span>$150</span></div>
+              <div className="python-line"><span>Monitor</span><span>$300</span></div>
+              <div className="python-line"><span>Headphones</span><span>$180</span></div>
+              <div className="python-result">Grand total: $790</div>
+            </>
+          )}
+          <div className="python-done">Report exported successfully.</div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="art art-react" aria-hidden="true"><div className="task-window"><div className="task-head"><div><span>YOUR SPACE</span><strong>Make today count.</strong></div><div className="task-icon">✓</div></div><div className="task-tabs"><span>All tasks</span><span>In progress</span><span>Done</span></div><div className="task-lines"><div><i className="task-check"/><b>Review dashboard layout</b><span>HIGH</span></div><div><i className="task-check active"/><b>Test responsive views</b><span>MEDIUM</span></div><div><i className="task-check"/><b>Update documentation</b><span>LOW</span></div></div><div className="task-progress"><span>Today's progress</span><div><i/></div></div></div></div>
   );
@@ -135,12 +163,17 @@ function ProjectArt({ art }) {
 function ProjectCard({ project, index }) {
   return (
     <article className={'project-card ' + (index === 0 ? 'project-card-wide' : '')}>
-      <ProjectArt art={project.art} />
+      {project.screenshot ? (
+        <div className="art art-screenshot">
+          <img src={project.screenshot} alt={project.title + ' — actual desktop application screenshot'} loading="lazy" />
+          <span className="screenshot-caption">ACTUAL APP SCREENSHOT</span>
+        </div>
+      ) : <ProjectArt art={project.art} />}
       <div className="project-info">
         <div className="project-overline"><span>{project.number} / {project.label}</span><span>{project.category}</span></div>
         <h3>{project.title}</h3>
         <p>{project.summary}</p>
-        <div className="project-bottom"><div className="tags">{project.stack.map((name) => <span key={name}>{name}</span>)}</div><div className="project-links">{project.id === 'mira-flowers' && <a href="#case-study" aria-label="Read the Mira Flowers case study">Case study <Arrow diagonal /></a>}<a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={'Live demo: ' + project.title}>Live <Arrow diagonal /></a><a href={project.code} target="_blank" rel="noopener noreferrer" aria-label={'Source code: ' + project.title}>Code <Arrow diagonal /></a></div></div>
+        <div className="project-bottom"><div className="tags">{project.stack.map((name) => <span key={name}>{name}</span>)}</div><div className="project-links">{project.id === 'mira-flowers' && <a href="#case-study" aria-label="Read the Mira Flowers case study">Case study <Arrow diagonal /></a>}{project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={'Live demo: ' + project.title}>Live <Arrow diagonal /></a>}<a href={project.code} target="_blank" rel="noopener noreferrer" aria-label={'Source code: ' + project.title}>Code <Arrow diagonal /></a></div></div>
       </div>
     </article>
   );
@@ -153,9 +186,9 @@ function Work() {
     <section className="section work-section" id="work" aria-labelledby="work-title">
       <div className="container">
         <div className="section-heading"><div><div className="kicker"><span>01</span> / SELECTED WORK</div><h2 id="work-title">Useful things, <em>beautifully built.</em></h2></div><p>Every project starts with a problem worth solving. Here are a few practical things I've made.</p></div>
-        <div className="filter-row" role="group" aria-label="Filter projects">{['All', 'Websites', 'Dashboards'].map((name) => <button key={name} className={'filter-chip ' + (filter === name ? 'filter-active' : '')} type="button" aria-pressed={filter === name} onClick={() => setFilter(name)}>{name}{name === 'All' ? ' (' + projects.length + ')' : ''}</button>)}</div>
+        <div className="filter-row" role="group" aria-label="Filter projects">{['All', 'Websites', 'Dashboards', 'Automation'].map((name) => <button key={name} className={'filter-chip ' + (filter === name ? 'filter-active' : '')} type="button" aria-pressed={filter === name} onClick={() => setFilter(name)}>{name}{name === 'All' ? ' (' + projects.length + ')' : ''}</button>)}</div>
         <div className="project-grid">{visible.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
-        <p className="work-footnote">The interface previews above are stylized illustrations. Use the live links to see the actual applications.</p>
+        <p className="work-footnote">Category Dashboard shows a real app screenshot; the other previews are illustrations. Use Live to try web apps or Code for the Python scripts.</p>
         <a className="all-repos" href={links.github} target="_blank" rel="noopener noreferrer">More projects on GitHub <Arrow diagonal /></a>
       </div>
     </section>
