@@ -37,6 +37,7 @@ export const projects = [
     demo: 'https://givi588.github.io/category-dashboard/',
     code: 'https://github.com/givi588/category-dashboard',
     art: 'categories',
+    screenshot: 'https://raw.githubusercontent.com/givi588/category-dashboard/main/screenshots/v1-desktop.png',
     featured: true,
   },
   {
@@ -65,6 +66,32 @@ export const projects = [
     art: 'react',
     featured: true,
   },
+  {
+    id: 'python-inventory',
+    number: '06',
+    title: 'Python Inventory Manager',
+    category: 'Automation',
+    label: 'CSV reporting script',
+    summary: 'Reads sample inventory CSV files, totals stock value, identifies low-stock items and exports a report with input validation and unit tests.',
+    stack: ['Python', 'CSV', 'Unit tests'],
+    demo: null,
+    code: 'https://github.com/givi588/python-inventory-manager',
+    art: 'python-inventory',
+    featured: true,
+  },
+  {
+    id: 'python-sales',
+    number: '07',
+    title: 'Python Sales Calculator',
+    category: 'Automation',
+    label: 'Sales report automation',
+    summary: 'Calculates sales revenue from sample CSV data and creates repeatable reports, with validation and automated tests across Python versions.',
+    stack: ['Python', 'CSV', 'GitHub Actions'],
+    demo: null,
+    code: 'https://github.com/givi588/python-sales-calculator',
+    art: 'python-sales',
+    featured: true,
+  },
 ];
 
 export const services = [
@@ -76,9 +103,9 @@ export const services = [
   },
   {
     number: '02',
-    title: 'React & JavaScript apps',
+    title: 'React & TypeScript apps',
     description: 'Interactive tools with thoughtful forms, search, filters and clear user feedback.',
-    detail: 'React · Vite · UI development',
+    detail: 'React · TypeScript · Vite',
   },
   {
     number: '03',
