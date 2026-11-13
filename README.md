@@ -1,6 +1,6 @@
 # Givi — Developer Portfolio
 
-A responsive portfolio showcasing real web projects, React dashboards, and practical Python automation. Built with **React, Vite, and CSS**.
+A responsive portfolio showcasing real web projects, React and TypeScript applications, and practical Python CSV automation. Built with **React, Vite, and CSS**.
 
 **Live website:** https://givi588.github.io/givi-portfolio/
 
@@ -11,8 +11,10 @@ A responsive portfolio showcasing real web projects, React dashboards, and pract
 - [Sales & Inventory Manager](https://givi588.github.io/sales-inventory-manager-clean/)
 - [React Training Dashboard](https://givi588.github.io/react-training-dashboard/)
 - [Invoice & Quote Studio v1.1 — React + TypeScript](https://givi588.github.io/invoice-quote-studio/) · [Source code](https://github.com/givi588/invoice-quote-studio) · [TypeScript walkthrough](https://github.com/givi588/invoice-quote-studio/blob/main/docs/TYPESCRIPT_LESSON.md)
+- [Python Inventory Manager — CSV reports & tests](https://github.com/givi588/python-inventory-manager) *(command-line project; no web demo)*
+- [Python Sales Calculator — revenue reports & tests](https://github.com/givi588/python-sales-calculator) *(command-line project; no web demo)*
 
-The site includes interactive project filters, a detailed real-business Mira Flowers case study, responsive navigation, custom CSS illustrations, a services section, and links to GitHub and Fiverr. The illustrations are **not actual application screenshots or verified customer metrics**; use the live-demo links for the real products.
+The site includes interactive Websites, Dashboards, and Automation filters, a detailed real-business Mira Flowers case study, responsive navigation, service descriptions, and GitHub/Fiverr links. Category Dashboard has a **real browser screenshot** sourced from its repository; other card visuals are stylized illustrations, **not** screenshots or customer metrics. Python projects link to source and setup instructions rather than pretending to have web demos.
 
 ## Run locally
 
