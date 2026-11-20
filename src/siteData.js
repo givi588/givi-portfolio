@@ -2,47 +2,75 @@
 export const projects = [
   {
     id: 'mira-flowers',
-    number: '01',
+    study: {
+      "image": "mira-catalog",
+      "alt": "Mira Flowers catalog showing the bouquet filters and product cards",
+      "challenge": "A flower shop in Kutaisi needed one place for customers to browse arrangements and find pickup, delivery, and contact details.",
+      "contribution": "I built the Georgian storefront, category filters, persistent cart, and delivery calculations in vanilla JavaScript. The cart prepares a summary customers can copy into a message.",
+      "result": "The live site lets customers plan an order and contact the shop to confirm it.",
+      "features": [
+        "Catalog filters",
+        "Persistent cart",
+        "Delivery estimates"
+      ]
+    },
     title: 'Mira Flowers',
     category: 'Websites',
     label: 'Real storefront',
-    summary: 'A responsive, Georgian-language storefront helping a local flower shop showcase arrangements and prepare order inquiries.',
+    summary: 'A Georgian-language storefront for a flower shop in Kutaisi, with a catalog, cart, and an order summary customers can copy.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     demo: 'https://givi588.github.io/mira-flowers/',
     code: 'https://github.com/givi588/mira-flowers',
-    art: 'flowers',
-    featured: true,
+
   },
   {
     id: 'invoice-quote-studio',
-    number: '02',
+    study: {
+      "image": "invoice",
+      "alt": "Invoice & Quote Studio editor beside its sample document preview",
+      "challenge": "Preparing quotes and invoices in a browser requires consistent totals and a document that prints cleanly.",
+      "contribution": "I built the React and TypeScript editor, with totals calculated in integer minor units, optional tax and discounts, and JSON backup for local drafts.",
+      "result": "The demo lets you edit a sample document and use the browser’s print dialog to save it as PDF.",
+      "features": [
+        "Live document preview",
+        "Tax and discounts",
+        "Print to PDF"
+      ]
+    },
     title: 'Invoice & Quote Studio',
     category: 'Dashboards',
     label: 'Business document tool',
-    summary: 'A React and TypeScript tool for preparing quotes and invoices with live totals, discounts, optional tax, browser-only drafts, JSON backups, and print-to-PDF.',
+    summary: 'Prepare quotes and invoices with live totals, drafts saved in the browser, and a print-ready preview.',
     stack: ['React', 'TypeScript', 'Vite'],
     demo: 'https://givi588.github.io/invoice-quote-studio/',
     code: 'https://github.com/givi588/invoice-quote-studio',
-    art: 'invoice',
-    featured: true,
+
   },
   {
     id: 'category-dashboard',
-    number: '03',
+    study: {
+      "image": "category",
+      "alt": "Category Dashboard 2.1 showing inventory totals, category bars, and the category list",
+      "challenge": "A browser-based inventory tool needs a way to recover after an accidental deletion or a failed save.",
+      "contribution": "I built category search and sorting, CSV and JSON transfer, and recovery tools. Tests cover storage failures and restoring the previous save.",
+      "result": "The published dashboard supports adding and searching categories, restoring deleted entries, and exporting data.",
+      "features": [
+        "Inventory summaries",
+        "CSV and JSON transfer",
+        "Undo and recovery"
+      ]
+    },
     title: 'Category Dashboard',
     category: 'Dashboards',
     label: 'Data management',
-    summary: 'A browser-based category manager with search, sorting, safe import/export, recovery controls and automated tests.',
+    summary: 'Organize inventory categories, review totals, and recover deleted or previous data in the browser.',
     stack: ['JavaScript', 'Testing', 'LocalStorage'],
     demo: 'https://givi588.github.io/category-dashboard/',
     code: 'https://github.com/givi588/category-dashboard',
-    art: 'categories',
-    screenshot: 'https://raw.githubusercontent.com/givi588/category-dashboard/main/screenshots/v1-desktop.png',
-    featured: true,
+
   },
   {
     id: 'sales-inventory',
-    number: '04',
     title: 'Sales & Inventory Manager',
     category: 'Dashboards',
     label: 'Business tools',
@@ -50,12 +78,10 @@ export const projects = [
     stack: ['JavaScript', 'CSV', 'Browser storage'],
     demo: 'https://givi588.github.io/sales-inventory-manager-clean/',
     code: 'https://github.com/givi588/sales-inventory-manager-clean',
-    art: 'inventory',
-    featured: true,
+
   },
   {
     id: 'react-training',
-    number: '05',
     title: 'React Training Dashboard',
     category: 'Dashboards',
     label: 'React application',
@@ -63,12 +89,10 @@ export const projects = [
     stack: ['React', 'Vite', 'JavaScript'],
     demo: 'https://givi588.github.io/react-training-dashboard/',
     code: 'https://github.com/givi588/react-training-dashboard',
-    art: 'react',
-    featured: true,
+
   },
   {
     id: 'python-inventory',
-    number: '06',
     title: 'Python Inventory Manager',
     category: 'Automation',
     label: 'CSV reporting script',
@@ -76,12 +100,10 @@ export const projects = [
     stack: ['Python', 'CSV', 'Unit tests'],
     demo: null,
     code: 'https://github.com/givi588/python-inventory-manager',
-    art: 'python-inventory',
-    featured: true,
+
   },
   {
     id: 'python-sales',
-    number: '07',
     title: 'Python Sales Calculator',
     category: 'Automation',
     label: 'Sales report automation',
@@ -89,26 +111,22 @@ export const projects = [
     stack: ['Python', 'CSV', 'GitHub Actions'],
     demo: null,
     code: 'https://github.com/givi588/python-sales-calculator',
-    art: 'python-sales',
-    featured: true,
+
   },
 ];
 
 export const services = [
   {
-    number: '01',
     title: 'Websites & landing pages',
     description: 'Responsive, readable and focused business websites that work across devices.',
     detail: 'HTML · CSS · JavaScript',
   },
   {
-    number: '02',
     title: 'React & TypeScript apps',
     description: 'Interactive tools with thoughtful forms, search, filters and clear user feedback.',
     detail: 'React · TypeScript · Vite',
   },
   {
-    number: '03',
     title: 'Python & CSV automation',
     description: 'Small tools that simplify repetitive calculations, cleanup and reporting.',
     detail: 'Python · CSV · Reporting',

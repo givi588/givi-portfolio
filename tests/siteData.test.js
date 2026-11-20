@@ -1,58 +1,44 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { projects, services, links } from '../src/siteData.js';
 
-const validUrl = (value) => {
-  const url = new URL(value);
-  return url.protocol === 'https:' && Boolean(url.hostname);
-};
+const https = value => new URL(value).protocol === 'https:';
 
-test('portfolio has seven unique featured projects', () => {
+test('the catalog retains seven unique projects and three case studies', () => {
   assert.equal(projects.length, 7);
-  assert.equal(new Set(projects.map((project) => project.id)).size, projects.length);
-  assert.ok(projects.every((project) => project.featured));
+  assert.equal(new Set(projects.map(project => project.id)).size, projects.length);
+  assert.deepEqual(projects.filter(project => project.study).map(project => project.id),
+    ['mira-flowers', 'invoice-quote-studio', 'category-dashboard']);
 });
 
-test('invoice app is featured with the verified live and source URLs', () => {
-  const invoice = projects.find((project) => project.id === 'invoice-quote-studio');
-  assert.ok(invoice, 'missing invoice project');
-  assert.equal(invoice.demo, 'https://givi588.github.io/invoice-quote-studio/');
-  assert.equal(invoice.code, 'https://github.com/givi588/invoice-quote-studio');
-  assert.equal(invoice.art, 'invoice');
-});
-
-test('each project has complete data and working URL formats', () => {
+test('project and contact destinations are HTTPS', () => {
   for (const project of projects) {
-    for (const field of ['title', 'summary', 'label', 'art', 'category']) {
-      assert.ok(project[field]?.trim(), `${project.id} missing ${field}`);
-    }
+    assert.ok(https(project.code));
+    assert.ok(project.demo === null || https(project.demo));
+    assert.ok(project.title && project.summary && project.stack.length >= 2);
     assert.ok(['Websites', 'Dashboards', 'Automation'].includes(project.category));
-    assert.ok(project.stack.length >= 2);
-    if (project.demo !== null) assert.ok(validUrl(project.demo));
-    assert.ok(validUrl(project.code));
   }
+  assert.ok(Object.values(links).every(https));
 });
 
-test('service entries are unique and complete', () => {
-  assert.equal(services.length, 3);
-  assert.equal(new Set(services.map((service) => service.number)).size, services.length);
-  assert.ok(services.every((service) => service.description && service.title && service.detail));
+test('featured projects point to their verified deployments and have local screenshots', () => {
+  for (const project of projects.filter(project => project.study)) {
+    assert.equal(project.demo, 'https://givi588.github.io/' + project.id + '/');
+    const { image, alt, challenge, contribution, result, features } = project.study;
+    assert.ok(alt && challenge && contribution && result && features.length);
+    assert.ok(existsSync(new URL('../public/projects/' + image + '.webp', import.meta.url)));
+  }
+  assert.ok(existsSync(new URL('../public/projects/mira-home.webp', import.meta.url)));
 });
 
-test('external contact and profile links are HTTPS', () => {
-  assert.ok(Object.values(links).every(validUrl));
-});
-
-test('Python command-line examples are clearly marked without fake live demos', () => {
-  const automation = projects.filter((project) => project.category === 'Automation');
+test('the two Python command-line projects are source-only', () => {
+  const automation = projects.filter(project => project.category === 'Automation');
   assert.equal(automation.length, 2);
-  assert.ok(automation.every((project) => project.demo === null));
-  assert.ok(automation.every((project) => project.code.startsWith('https://github.com/givi588/')));
-  assert.ok(automation.every((project) => project.stack.includes('Python')));
+  assert.ok(automation.every(project => project.demo === null && project.stack.includes('Python')));
 });
 
-test('real screenshot is sourced from the published dashboard repository', () => {
-  const category = projects.find((project) => project.id === 'category-dashboard');
-  assert.equal(category.screenshot, 'https://raw.githubusercontent.com/givi588/category-dashboard/main/screenshots/v1-desktop.png');
-  assert.ok(projects.filter((project) => project.screenshot).length === 1);
+test('services have unique titles and descriptions', () => {
+  assert.equal(new Set(services.map(service => service.title)).size, 3);
+  assert.ok(services.every(service => service.description && service.detail));
 });
