@@ -19,6 +19,11 @@ test('project and contact destinations are HTTPS', () => {
     assert.ok(project.title && project.summary && project.stack.length >= 2);
     assert.ok(['Websites', 'Dashboards', 'Automation'].includes(project.category));
   }
+  assert.deepEqual(links, {
+    github: 'https://github.com/givi588',
+    linkedin: 'https://www.linkedin.com/in/givi-pruidze-43929944a/',
+    inquiry: 'https://github.com/givi588/givi588/issues/new?template=project-inquiry.yml',
+  });
   assert.ok(Object.values(links).every(https));
 });
 

@@ -24,7 +24,8 @@ try {
   assert.match(html, /Category Dashboard/);
   assert.match(html, /href="#case-study"/);
   assert.match(html, /Read the technical breakdown/);
-  assert.match(html, /Contact me on Fiverr/);
+  assert.match(html, /<a href="https:\/\/www\.linkedin\.com\/in\/givi-pruidze-43929944a\/" class="button primary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn<\/a>/);
+  assert.ok(html.includes('Connect with me on LinkedIn for professional inquiries. GitHub project inquiries are public.'));
   for (const id of ['top', 'main', 'work', 'about', 'skills', 'contact', 'services', 'case-study']) {
     assert.ok(html.includes('id="' + id + '"'), 'Missing anchor: ' + id);
   }
