@@ -29,7 +29,7 @@ The test script checks project data and renders the React page with Vite. The pr
 - Put optimized screenshots from real builds in `public/projects/`. The current images were captured from the live storefront, invoice editor, and Category Dashboard 2.1. The invoice preview uses the app's sample document.
 - Update metadata in `index.html`.
 
-The contact section links to the published Fiverr service, GitHub profile, and public GitHub inquiry template. The portfolio has no contact backend.
+The contact section links to [LinkedIn](https://www.linkedin.com/in/givi-pruidze-43929944a/) for professional inquiries, the GitHub profile, and the public GitHub inquiry template. The portfolio has no contact backend.
 
 ## GitHub Pages
 

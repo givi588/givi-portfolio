@@ -223,11 +223,11 @@ function Contact() {
       </div>
       <div>
         <div className="actions contact-actions">
-          <ExternalLink className="button primary" href={links.fiverr}>Contact me on Fiverr</ExternalLink>
+          <ExternalLink className="button primary" href={links.linkedin}>Connect on LinkedIn</ExternalLink>
           <ExternalLink className="button secondary" href={links.github}>GitHub profile</ExternalLink>
           <ExternalLink className="button secondary" href={links.inquiry}>Start a project inquiry</ExternalLink>
         </div>
-        <p className="contact-note">GitHub inquiries are public. Use Fiverr for private project details.</p>
+        <p className="contact-note">Connect with me on LinkedIn for professional inquiries. GitHub project inquiries are public.</p>
       </div>
     </div>
   </section>;

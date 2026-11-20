@@ -135,6 +135,6 @@ export const services = [
 
 export const links = {
   github: 'https://github.com/givi588',
-  fiverr: 'https://www.fiverr.com/givi588/fix-html-css-and-javascript-website-bugs',
+  linkedin: 'https://www.linkedin.com/in/givi-pruidze-43929944a/',
   inquiry: 'https://github.com/givi588/givi588/issues/new?template=project-inquiry.yml',
 };
