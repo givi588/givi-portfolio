@@ -113,11 +113,12 @@ function ProjectLinks({ project }) {
 }
 
 function ProjectCard({ project }) {
+  const flagship = project.id === 'mira-flowers';
   return (
-    <article className="project-card">
+    <article className={flagship ? 'project-card flagship' : 'project-card'}>
       <img src={asset(project.study.image)} width="1120" height="760" alt={project.study.alt} loading="lazy" decoding="async" />
       <div className="project-copy">
-        <p className="project-type">{project.label}</p>
+        <p className="project-type">{flagship ? 'Flagship · Real storefront' : project.label}</p>
         <h3>{project.title}</h3>
         <p>{project.summary}</p>
         <ul className="capabilities" aria-label="Capabilities">{project.study.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
@@ -169,13 +170,18 @@ function Work() {
         <section className="case-studies" id="case-study" aria-labelledby="case-title">
           <h3 id="case-title">Project case studies</h3>
           {featured.map(project => <details key={project.id} id={'case-study-' + project.id}>
-            <summary>{project.title}</summary>
-            <dl>
-              <div><dt>Challenge</dt><dd>{project.study.challenge}</dd></div>
-              <div><dt>What I built</dt><dd>{project.study.contribution}</dd></div>
-              <div><dt>Result</dt><dd>{project.study.result}</dd></div>
-            </dl>
-            {project.id === 'mira-flowers' && <ExternalLink href={project.code + '/blob/main/docs/CASE_STUDY.md'} className="case-link">Read the technical breakdown</ExternalLink>}
+            <summary>
+              <span className="study-title">{project.title}</span>
+              <span className="study-challenge">{project.study.challenge}</span>
+              <span className="study-toggle" aria-hidden="true" />
+            </summary>
+            <div className="study-content">
+              <dl>
+                <div><dt>What I built</dt><dd>{project.study.contribution}</dd></div>
+                <div><dt>Result</dt><dd>{project.study.result}</dd></div>
+              </dl>
+              {project.id === 'mira-flowers' && <ExternalLink href={project.code + '/blob/main/docs/CASE_STUDY.md'} className="case-link">Read the technical breakdown</ExternalLink>}
+            </div>
           </details>)}
         </section>
       </div>
@@ -211,14 +217,18 @@ function Skills() {
 function Contact() {
   return <section id="contact" className="section shell" aria-labelledby="contact-title" tabIndex={-1}>
     <div className="contact-panel">
-      <h2 id="contact-title">Have a project in mind?</h2>
-      <p>Tell me what you want to build or fix. I'm open to websites, frontend improvements, and practical web applications.</p>
-      <div className="actions">
-        <ExternalLink className="button primary" href={links.fiverr}>Contact me on Fiverr</ExternalLink>
-        <ExternalLink className="button secondary" href={links.github}>GitHub profile</ExternalLink>
-        <ExternalLink className="button secondary" href={links.inquiry}>Start a project inquiry</ExternalLink>
+      <div className="contact-intro">
+        <h2 id="contact-title">Have a project in mind?</h2>
+        <p>Tell me what you want to build or fix. I'm open to websites, frontend improvements, and practical web applications.</p>
       </div>
-      <p className="contact-note">GitHub inquiries are public. Use Fiverr for private project details.</p>
+      <div>
+        <div className="actions contact-actions">
+          <ExternalLink className="button primary" href={links.fiverr}>Contact me on Fiverr</ExternalLink>
+          <ExternalLink className="button secondary" href={links.github}>GitHub profile</ExternalLink>
+          <ExternalLink className="button secondary" href={links.inquiry}>Start a project inquiry</ExternalLink>
+        </div>
+        <p className="contact-note">GitHub inquiries are public. Use Fiverr for private project details.</p>
+      </div>
     </div>
   </section>;
 }

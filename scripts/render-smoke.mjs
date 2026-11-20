@@ -7,6 +7,8 @@ import { createServer } from 'vite';
 // here catches missing React runtime imports that a syntax-only build misses.
 const server = await createServer({
   appType: 'custom',
+  // This server only transforms modules for SSR. Skip the client dependency scan.
+  optimizeDeps: { noDiscovery: true },
   server: { middlewareMode: true },
   logLevel: 'error',
 });
