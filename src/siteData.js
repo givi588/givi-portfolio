@@ -24,6 +24,29 @@ export const projects = [
 
   },
   {
+    id: 'pandora-the-forbidden-gift',
+    study: {
+      image: 'pandora-temple.png',
+      alt: "In-game view of Pandora's box and the temple exit across the chasm",
+      challenge: "Create a complete first-person 3D puzzle inspired by Greek mythology, with a beginning, an interactive mechanic, and an ending.",
+      contribution: "I defined the concept, scope, and central puzzle rules, reviewed iterations, and manually play-tested the Windows release. Codex assisted with GDScript implementation, Blender Python models, synthesized audio, automated tests, and release preparation.",
+      result: "Published a playable Windows x64 game with original procedural 3D assets, a documented Godot source project, and automated regression tests.",
+      features: [
+        "First-person temple puzzle",
+        "Original 3D assets",
+        "Windows v1.0.0 release"
+      ]
+    },
+    title: 'Pandora: The Forbidden Gift',
+    category: 'Games',
+    label: 'Released 3D puzzle game',
+    summary: "A first-person Godot puzzle set in a Greek-inspired temple. Open Pandora's box, stop the tremors, and find a safe path to the exit.",
+    stack: ['Godot', 'GDScript', 'Blender', 'Python'],
+    demo: null,
+    download: 'https://github.com/givi588/pandora-the-forbidden-gift/releases/download/v1.0.0/Pandora-The-Forbidden-Gift-v1.0.0-Windows.zip',
+    code: 'https://github.com/givi588/pandora-the-forbidden-gift',
+  },
+  {
     id: 'invoice-quote-studio',
     study: {
       "image": "invoice",
