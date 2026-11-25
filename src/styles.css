@@ -73,6 +73,9 @@ h2 { font-size: clamp(2.1rem, 4vw, 3.7rem); letter-spacing: -.052em; font-weight
   .project-grid:has(.flagship):has(.project-card:nth-child(3)) {
     grid-template-columns: minmax(0, 1.17fr) repeat(2, minmax(0, 1fr));
   }
+  .project-grid:has(.flagship):has(.project-card:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .project-copy { display: flex; flex-direction: column; flex: 1; gap: 12px; padding: clamp(16px, 2.3vw, 26px); }
 .project-copy h3 { font-size: clamp(1.35rem, 2.2vw, 1.85rem); letter-spacing: -.025em; }
