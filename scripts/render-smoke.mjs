@@ -19,6 +19,8 @@ try {
 
   assert.match(html, /Frontend developer/);
   assert.match(html, /Mira Flowers/);
+  assert.match(html, /Pandora: The Forbidden Gift/);
+  assert.match(html, /Download for Windows/);
   assert.match(html, /React Training Dashboard/);
   assert.match(html, /Invoice &amp; Quote Studio/);
   assert.match(html, /Category Dashboard/);
