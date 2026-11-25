@@ -5,9 +5,9 @@ const navigation = [
   ['top', 'Home'], ['work', 'Projects'], ['about', 'About'],
   ['skills', 'Skills'], ['contact', 'Contact'],
 ];
-const filters = ['All', 'Websites', 'Dashboards', 'Automation'];
+const filters = ['All', 'Websites', 'Dashboards', 'Automation', 'Games'];
 const featured = projects.filter(project => project.study);
-const asset = name => import.meta.env.BASE_URL + 'projects/' + name + '.webp';
+const asset = name => import.meta.env.BASE_URL + 'projects/' + name + (name.includes('.') ? '' : '.webp');
 
 function ExternalLink({ href, children, className, label }) {
   return <a href={href} className={className} aria-label={label} target="_blank" rel="noopener noreferrer">{children}</a>;
@@ -90,7 +90,7 @@ function Hero() {
       <div>
         <p className="eyebrow">Givi · Independent developer</p>
         <h1 id="hero-title">Frontend developer <span>&amp; software builder.</span></h1>
-        <p className="hero-intro">I build responsive websites and React apps, fix frontend issues, and write Python tools for everyday business tasks.</p>
+        <p className="hero-intro">I build responsive websites and React apps, fix frontend issues, and write Python tools for everyday business tasks. I also develop small game projects with Godot.</p>
         <div className="actions">
           <a className="button primary" href="#work">View my projects</a>
           <a className="button secondary" href="#contact">Contact me</a>
@@ -108,6 +108,7 @@ function Hero() {
 function ProjectLinks({ project }) {
   return <div className="project-links">
     {project.demo && <ExternalLink href={project.demo} label={'Live demo: ' + project.title}>Live demo</ExternalLink>}
+    {project.download && <ExternalLink href={project.download} label={'Download Windows game: ' + project.title}>Download for Windows</ExternalLink>}
     <ExternalLink href={project.code} label={'Source code: ' + project.title}>Source code</ExternalLink>
   </div>;
 }
@@ -196,6 +197,7 @@ function About() {
       <div className="about-copy">
         <p>I'm Givi, a freelance developer based in Georgia. I build sites for small businesses and browser-based tools for tasks like preparing invoices or organizing inventory.</p>
         <p>I like projects with a clear scope and a useful outcome. I test the workflows people rely on and write down how to run and maintain what I build.</p>
+        <p>I also directed and play-tested <a href="https://github.com/givi588/pandora-the-forbidden-gift">Pandora: The Forbidden Gift</a>, an original Godot 3D puzzle developed with Codex-assisted implementation and Blender models.</p>
       </div>
       <div id="services" className="services">{services.map(service => <article key={service.title}><h3>{service.title}</h3><p>{service.description}</p></article>)}</div>
     </section>
@@ -209,6 +211,7 @@ function Skills() {
       <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript, TypeScript, React</dd></div>
       <div><dt>Automation</dt><dd>Python, CSV validation and reporting</dd></div>
       <div><dt>Development</dt><dd>Git, GitHub, Vite, GitHub Actions, automated tests</dd></div>
+      <div><dt>3D game projects</dt><dd>Godot, GDScript, Blender, procedural 3D models</dd></div>
       <div><dt>Implementation</dt><dd>Responsive layouts, keyboard navigation, browser storage, debugging</dd></div>
     </dl>
   </div></section>;
