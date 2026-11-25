@@ -1,6 +1,6 @@
 # Givi's developer portfolio
 
-A React and Vite portfolio for my freelance work in frontend development and Python automation. The site features Mira Flowers, Invoice & Quote Studio, and Category Dashboard, with links to four other projects.
+A React and Vite portfolio for my freelance work in frontend development, Python automation, and an original Godot game project. Featured work includes Mira Flowers, Pandora: The Forbidden Gift, Invoice & Quote Studio, and Category Dashboard, alongside four other projects.
 
 [Live portfolio](https://givi588.github.io/givi-portfolio/)
 
@@ -26,7 +26,7 @@ The test script checks project data and renders the React page with Vite. The pr
 ## Update the portfolio
 
 - Edit project links, case studies, and services in `src/siteData.js`.
-- Put optimized screenshots from real builds in `public/projects/`. The current images were captured from the live storefront, invoice editor, and Category Dashboard 2.1. The invoice preview uses the app's sample document.
+- Put optimized screenshots from real builds in `public/projects/`. The images come from the actual Mira Flowers storefront, Pandora gameplay, Invoice & Quote Studio, and Category Dashboard 2.1. The invoice preview uses the app's sample document.
 - Update metadata in `index.html`.
 
 The contact section links to [LinkedIn](https://www.linkedin.com/in/givi-pruidze-43929944a/) for professional inquiries, the GitHub profile, and the public GitHub inquiry template. The portfolio has no contact backend.
